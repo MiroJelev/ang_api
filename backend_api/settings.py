@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -75,9 +75,11 @@ WSGI_APPLICATION = 'backend_api.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.mysql',
-        "OPTIONS": {
-            "read_default_file": "../db.cnf",
-        },
+        "NAME": "Mondial",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "127.0.0.1",
+        "PORT": "3306"
     }
 }
 
