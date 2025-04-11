@@ -9,7 +9,7 @@ from django.db import models
 
 
 class Borders(models.Model):
-    pk = models.CompositePrimaryKey('Country1', 'Country2')
+    pk = models.CompositePrimaryKey('country1', 'country2')
     country1 = models.CharField(db_column='Country1', max_length=4)  # Field name made lowercase.
     country2 = models.CharField(db_column='Country2', max_length=4)  # Field name made lowercase.
     length = models.FloatField(db_column='Length', blank=True, null=True)  # Field name made lowercase.
@@ -21,7 +21,7 @@ class Borders(models.Model):
 
 
 class City(models.Model):
-    pk = models.CompositePrimaryKey('Name', 'Country', 'Province')
+    pk = models.CompositePrimaryKey('name', 'country', 'province')
     name = models.CharField(db_column='Name', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -82,7 +82,7 @@ class Economy(models.Model):
 
 
 class Encompasses(models.Model):
-    pk = models.CompositePrimaryKey('Country', 'Continent')
+    pk = models.CompositePrimaryKey('country', 'continent')
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     continent = models.CharField(db_column='Continent', max_length=20)  # Field name made lowercase.
     percentage = models.FloatField(db_column='Percentage', blank=True, null=True)  # Field name made lowercase.
@@ -94,7 +94,7 @@ class Encompasses(models.Model):
 
 
 class Ethnicgroup(models.Model):
-    pk = models.CompositePrimaryKey('Name', 'Country')
+    pk = models.CompositePrimaryKey('name', 'country')
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=50)  # Field name made lowercase.
     percentage = models.FloatField(db_column='Percentage', blank=True, null=True)  # Field name made lowercase.
@@ -106,7 +106,7 @@ class Ethnicgroup(models.Model):
 
 
 class GeoDesert(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'Desert')
+    pk = models.CompositePrimaryKey('province', 'country', 'desert')
     desert = models.CharField(db_column='Desert', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -118,7 +118,7 @@ class GeoDesert(models.Model):
 
 
 class GeoEstuary(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'River')
+    pk = models.CompositePrimaryKey('province', 'country', 'river')
     river = models.CharField(db_column='River', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -130,7 +130,7 @@ class GeoEstuary(models.Model):
 
 
 class GeoIsland(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'Island')
+    pk = models.CompositePrimaryKey('province', 'country', 'island')
     island = models.CharField(db_column='Island', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -142,7 +142,7 @@ class GeoIsland(models.Model):
 
 
 class GeoLake(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'Lake')
+    pk = models.CompositePrimaryKey('province', 'country', 'lake')
     lake = models.CharField(db_column='Lake', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -154,7 +154,7 @@ class GeoLake(models.Model):
 
 
 class GeoMountain(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'Mountain')
+    pk = models.CompositePrimaryKey('province', 'country', 'mountain')
     mountain = models.CharField(db_column='Mountain', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -166,7 +166,7 @@ class GeoMountain(models.Model):
 
 
 class GeoRiver(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'River')
+    pk = models.CompositePrimaryKey('province', 'country', 'river')
     river = models.CharField(db_column='River', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -178,7 +178,7 @@ class GeoRiver(models.Model):
 
 
 class GeoSea(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'Sea')
+    pk = models.CompositePrimaryKey('province', 'country', 'sea')
     sea = models.CharField(db_column='Sea', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -190,7 +190,7 @@ class GeoSea(models.Model):
 
 
 class GeoSource(models.Model):
-    pk = models.CompositePrimaryKey('Province', 'Country', 'River')
+    pk = models.CompositePrimaryKey('province', 'country', 'river')
     river = models.CharField(db_column='River', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
@@ -202,7 +202,7 @@ class GeoSource(models.Model):
 
 
 class Ismember(models.Model):
-    pk = models.CompositePrimaryKey('Country', 'Organization')
+    pk = models.CompositePrimaryKey('country', 'organization')
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     organization = models.CharField(db_column='Organization', max_length=12)  # Field name made lowercase.
     type = models.CharField(db_column='Type', max_length=35, blank=True, null=True)  # Field name made lowercase.
@@ -254,7 +254,7 @@ class Lake(models.Model):
 
 
 class Language(models.Model):
-    pk = models.CompositePrimaryKey('Name', 'Country')
+    pk = models.CompositePrimaryKey('name', 'country')
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=50)  # Field name made lowercase.
     percentage = models.FloatField(db_column='Percentage', blank=True, null=True)  # Field name made lowercase.
@@ -279,7 +279,7 @@ class Located(models.Model):
 
 
 class Locatedon(models.Model):
-    pk = models.CompositePrimaryKey('City', 'Province', 'Country', 'Island')
+    pk = models.CompositePrimaryKey('city', 'province', 'country', 'island')
     city = models.CharField(db_column='City', max_length=35)  # Field name made lowercase.
     province = models.CharField(db_column='Province', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
@@ -292,7 +292,7 @@ class Locatedon(models.Model):
 
 
 class Mergeswith(models.Model):
-    pk = models.CompositePrimaryKey('Sea1', 'Sea2')
+    pk = models.CompositePrimaryKey('sea1', 'sea2')
     sea1 = models.CharField(db_column='Sea1', max_length=35)  # Field name made lowercase.
     sea2 = models.CharField(db_column='Sea2', max_length=35)  # Field name made lowercase.
 
@@ -316,7 +316,7 @@ class Mountain(models.Model):
 
 
 class Mountainonisland(models.Model):
-    pk = models.CompositePrimaryKey('Mountain', 'Island')
+    pk = models.CompositePrimaryKey('mountain', 'island')
     mountain = models.CharField(db_column='Mountain', max_length=35)  # Field name made lowercase.
     island = models.CharField(db_column='Island', max_length=35)  # Field name made lowercase.
 
@@ -361,7 +361,7 @@ class Population(models.Model):
 
 
 class Province(models.Model):
-    pk = models.CompositePrimaryKey('Name', 'Country')
+    pk = models.CompositePrimaryKey('name', 'country')
     name = models.CharField(db_column='Name', max_length=35)  # Field name made lowercase.
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     population = models.IntegerField(db_column='Population', blank=True, null=True)  # Field name made lowercase.
@@ -376,7 +376,7 @@ class Province(models.Model):
 
 
 class Religion(models.Model):
-    pk = models.CompositePrimaryKey('Name', 'Country')
+    pk = models.CompositePrimaryKey('name', 'country')
     country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=50)  # Field name made lowercase.
     percentage = models.FloatField(db_column='Percentage', blank=True, null=True)  # Field name made lowercase.
