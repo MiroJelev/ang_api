@@ -66,6 +66,8 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Demo project',
 }
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'backend_api.urls'
 
 TEMPLATES = [
