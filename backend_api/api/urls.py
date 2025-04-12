@@ -1,6 +1,6 @@
 from django.urls import path
-from backend_api.api.views import country_list
+from backend_api.api.views import CountryList
 
 urlpatterns = [
-    path('country/', country_list, name='country')
+    path('country/', CountryList.as_view())
 ]
