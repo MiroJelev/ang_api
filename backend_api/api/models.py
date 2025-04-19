@@ -51,8 +51,8 @@ class Country(models.Model):
     province = models.CharField(db_column='Province', max_length=35, blank=True, null=True)  # Field name made lowercase.
     area = models.FloatField(db_column='Area', blank=True, null=True)  # Field name made lowercase.
     population = models.IntegerField(db_column='Population', blank=True, null=True)  # Field name made lowercase.
-    politics = models.ForeignKey('Politics', db_column='Code', to_field="country", on_delete=models.DO_NOTHING)
-    continents = models.ForeignKey('Encompasses', db_column='Code', to_field="country", on_delete=models.DO_NOTHING)
+    politics = models.ForeignKey(to='Politics', db_column='code', to_field="country", on_delete=models.DO_NOTHING)
+    continents = models.ForeignKey(to='Encompasses', db_column='code', to_field="country", on_delete=models.DO_NOTHING)
 
     class Meta:
         managed = False
