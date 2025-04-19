@@ -85,7 +85,7 @@ class Economy(models.Model):
 
 class Encompasses(models.Model):
     pk = models.CompositePrimaryKey('country', 'continent')
-    country = models.CharField(db_column='Country', max_length=4)  # Field name made lowercase.
+    country = models.CharField(db_column='Country', max_length=4, unique=True)  # Field name made lowercase.
     continent = models.CharField(db_column='Continent', max_length=20)  # Field name made lowercase.
     percentage = models.FloatField(db_column='Percentage', blank=True, null=True)  # Field name made lowercase.
 
