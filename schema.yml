@@ -166,17 +166,73 @@ paths:
               schema:
                 $ref: '#/components/schemas/Country'
           description: ''
+  /country_cities/:
+    get:
+      operationId: country_cities_retrieve
+      tags:
+      - country_cities
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+          description: ''
+  /policy/:
+    get:
+      operationId: policy_retrieve
+      tags:
+      - policy
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Politics'
+          description: ''
 components:
   schemas:
+    Continents:
+      type: object
+      properties:
+        pk:
+          type: string
+          readOnly: true
+        country:
+          type: string
+          maxLength: 4
+        continent:
+          type: string
+          maxLength: 20
+        percentage:
+          type: number
+          format: double
+          nullable: true
+      required:
+      - continent
+      - country
+      - pk
     Country:
       type: object
       properties:
-        name:
-          type: string
-          maxLength: 35
         code:
           type: string
           maxLength: 4
+        politics:
+          $ref: '#/components/schemas/Politics'
+        continents:
+          $ref: '#/components/schemas/Continents'
+        name:
+          type: string
+          maxLength: 35
         capital:
           type: string
           nullable: true
@@ -196,7 +252,29 @@ components:
           nullable: true
       required:
       - code
+      - continents
       - name
+      - politics
+    Politics:
+      type: object
+      properties:
+        country:
+          type: string
+          maxLength: 4
+        independence:
+          type: string
+          format: date
+          nullable: true
+        dependent:
+          type: string
+          nullable: true
+          maxLength: 4
+        government:
+          type: string
+          nullable: true
+          maxLength: 120
+      required:
+      - country
   securitySchemes:
     basicAuth:
       type: http
