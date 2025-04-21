@@ -53,6 +53,7 @@ class Country(models.Model):
     population = models.IntegerField(db_column='Population', blank=True, null=True)  # Field name made lowercase.
     politics = models.ForeignKey(to='Politics', db_column='code', to_field="country", related_name='+', on_delete=models.DO_NOTHING)
     continents = models.ForeignKey(to='Encompasses', db_column='code', to_field="country", related_name='+', on_delete=models.DO_NOTHING)
+    economy = models.ForeignKey(to='Economy', db_column='code', to_field="country", related_name='+', on_delete=models.DO_NOTHING)
 
     class Meta:
         managed = False

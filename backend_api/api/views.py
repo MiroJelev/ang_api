@@ -19,6 +19,8 @@ WHERE (Government LIKE '%%monarch%%'
 OR Government LIKE '%%principality%%');"""
 
         countries = Country.objects.prefetch_related('politics').raw(sql_query)
+        countries = Country.objects.prefetch_related('continents').raw(sql_query)
+        countries = Country.objects.prefetch_related('economy').raw(sql_query)
         serializer = CountrySerializer(countries, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
         
