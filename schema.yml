@@ -230,6 +230,8 @@ components:
           $ref: '#/components/schemas/Politics'
         continents:
           $ref: '#/components/schemas/Continents'
+        economy:
+          $ref: '#/components/schemas/Economy'
         name:
           type: string
           maxLength: 35
@@ -253,8 +255,37 @@ components:
       required:
       - code
       - continents
+      - economy
       - name
       - politics
+    Economy:
+      type: object
+      properties:
+        country:
+          type: string
+          maxLength: 4
+        gdp:
+          type: number
+          format: double
+          nullable: true
+        agriculture:
+          type: number
+          format: double
+          nullable: true
+        service:
+          type: number
+          format: double
+          nullable: true
+        industry:
+          type: number
+          format: double
+          nullable: true
+        inflation:
+          type: number
+          format: double
+          nullable: true
+      required:
+      - country
     Politics:
       type: object
       properties:
