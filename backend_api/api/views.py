@@ -16,8 +16,7 @@ ON Mondial.country.Code=Mondial.politics.Country
 INNER JOIN Mondial.encompasses
 ON Mondial.country.Code=Mondial.encompasses.Country
 WHERE (Government LIKE '%%monarch%%' 
-OR Government LIKE '%%principality%%')
-AND Continent Like 'Europe';"""
+OR Government LIKE '%%principality%%');"""
 
         countries = Country.objects.prefetch_related('politics').raw(sql_query)
         serializer = CountrySerializer(countries, many=True)
